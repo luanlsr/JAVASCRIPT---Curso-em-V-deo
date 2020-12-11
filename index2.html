@@ -22,19 +22,25 @@
 </head>
 
 <body>
-    <div id="area" onmouseover="clicar()" onmouseout="desclicar()">
+    <div id="area">
         Interaja...
 
     </div>
 
     <script>
-         function clicar(){
-            window.document.getElementById('area').innerHTML = 'Você interagiu!'
-            window.document.getElementById('area').style.backgroundColor = 'red'
+
+        var a = window.document.getElementById('area')
+        a.addEventListener('mouseover', mouseEmCima) 
+        a.addEventListener('mouseout', mouseFora)
+
+
+         function mouseEmCima(){
+            a.innerHTML = 'Você interagiu!'
+            a.style.backgroundColor = 'red'
          }
-         function desclicar(){
-            window.document.getElementById('area').innerHTML = 'Interaja...'
-            window.document.getElementById('area').style.backgroundColor = 'green'
+         function mouseFora(){
+            a.innerHTML = 'Interaja...'
+            a.style.backgroundColor = 'green'
 
 
          }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Somando números</title>
+
+    <style>
+        body{
+            font: normal 15pt arial;
+        }
+        #botoes1{
+            font: normal 15pt arial;
+            cursor: pointer;
+            background-color: rgb(58, 216, 255);
+        }
+        #botoes2{
+            font: normal 15pt arial;
+            cursor: pointer;
+            background-color: rgb(58, 216, 255);
+        }
+        #botoes3{
+            font: normal 15pt arial;
+            cursor: pointer;
+            background-color: rgb(58, 216, 255);
+        }
+        #botoes4{
+            font: normal 15pt arial;
+            cursor: pointer;
+            background-color: rgb(58, 216, 255);
+        }
+        .caixas{
+            height: 25px;
+            width: 75px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <h1>Somando Valores</h1>
+    <h4>Digite dois valores abaixo e escolha a operação.</h4>
+    <input type="number" class="caixas" onclick="limpar()" name="txtn1" id="txtn1">
+    <input type="number" class="caixas" name="txtn2" id="txtn2">
+
+    
+    <input type="button" id="botoes1"value="Somar" onclick="somar()">
+    <input type="button" id="botoes2"value="Subtrair" onclick="subtrair()">
+    <input type="button" id="botoes3"value="Multiplicar" onclick="multiplicar()">
+    <input type="button" id="botoes4"value="Dividir" onclick="dividir()">
+    
+    <br><br>
+    <div >Resultado da SOMA:
+    <p id="res1"></p>
+    </div>
+    <div >Resultado da SUBTRAÇÃO:
+        <p id="res2"></p>
+    </div>
+    <div >Resultado da MULTIPLICAÇÃO:
+        <p id="res3"></p>
+    </div>
+    <div >Resultado da DIVISÃO:
+        <p id="res4"></p>
+    </div>
+
+
+    <script>
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res1 = window.document.getElementById('res1')
+            var res2 = window.document.getElementById('res2')
+            var res3 = window.document.getElementById('res3')
+            var res4 = window.document.getElementById('res4')
+
+            var clear = window.document.getElementById(txtn1)
+
+        function somar(){
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var sum = n1 + n2
+            res1.innerHTML = sum
+            res1.style.color = 'red'
+            document.getElementById('botoes1').style.backgroundColor = 'red'
+        }
+        function subtrair(){
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var sub = n1 - n2
+            res2.innerHTML = sub
+            res2.style.color = 'red'
+            document.getElementById('botoes2').style.backgroundColor = 'red'
+
+        }
+        function multiplicar(){
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var multi = n1 * n2
+            res3.innerHTML = multi
+            res3.style.color = 'red'
+            document.getElementById('botoes3').style.backgroundColor = 'red'
+
+        }
+        function dividir(){
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var divi = n1 / n2
+            res4.innerHTML = divi
+            res4.style.color = 'red'
+            document.getElementById('botoes4').style.backgroundColor = 'red'
+
+        }
+        function limpar(){
+            document.getElementById('botoes1').style.backgroundColor = 'rgb(58, 216, 255)'
+            document.getElementById('botoes2').style.backgroundColor = 'rgb(58, 216, 255)'
+            document.getElementById('botoes3').style.backgroundColor = 'rgb(58, 216, 255)'
+            document.getElementById('botoes4').style.backgroundColor = 'rgb(58, 216, 255)'
+            document.getElementById('res1').style.color = 'black'
+            document.getElementById('res2').style.color = 'black'
+            document.getElementById('res3').style.color = 'black'
+            document.getElementById('res4').style.color = 'black'
+            document.getElementById('res1').innerHTML = ' '
+            document.getElementById('res2').innerHTML = ' '
+            document.getElementById('res3').innerHTML = ' '
+            document.getElementById('res4').innerHTML = ' '
+
+        }
+    </script>
+</body>
+</html>
