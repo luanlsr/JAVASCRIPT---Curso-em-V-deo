@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Curso de Javascript - Aula 8</title>
+    
+    <style>
+        #area{
+            font: normal 15pt arial;
+            background-color: green;
+            color: white;
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="area" onmouseover="clicar()" onmouseout="desclicar()">
+        Interaja...
+
+    </div>
+
+    <script>
+         function clicar(){
+            window.document.getElementById('area').innerHTML = 'Você interagiu!'
+            window.document.getElementById('area').style.backgroundColor = 'red'
+         }
+         function desclicar(){
+            window.document.getElementById('area').innerHTML = 'Interaja...'
+            window.document.getElementById('area').style.backgroundColor = 'green'
+
+
+         }
+    </script>
+    
+</body>
+</html>

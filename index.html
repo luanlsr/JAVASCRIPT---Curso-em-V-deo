@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Curso de Javascript - Aula 1</title>
+    <!-- <script type="text/javascript" src="/aula 1.js"></script> -->
+    <!-- <script type="text/javascript" src="/aula 2.js"></script> -->
+    <!-- <script type="text/javascript" src="/aula 3.js"></script> -->
+    <!-- <script type="text/javascript" src="/aula 4.js"></script> -->
+    <!-- <script type="text/javascript" src="/aula 6.js"></script> -->
+    <style>
+        body{
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Iniciando os estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
+    <div id="msg">Clique em mim</div>
+
+    <!-- <p class="class1" id="id1" name="titulo">Olá, mundo!</p> -->
+
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        corpo.style.background = 'black'
+        p1.style.color = 'blue'
+        var p2 = window.document.querySelector('div#msg').innerHTML = 'Oi'
+    </script>
+    
+</body>
+</html>
