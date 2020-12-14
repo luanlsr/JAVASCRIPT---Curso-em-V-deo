@@ -51,8 +51,8 @@
       function verificar() {
         var valor = document.querySelector("input#txt1");
         var age = Number(valor.value);
-        var resAge = window.document.getElementById("idade");
         var res = window.document.getElementById("resultado");
+        var resAge = window.document.getElementById("idade");
         resAge.innerText = `Sua idade é: ${age} `;
 
         if (age < 16) {
