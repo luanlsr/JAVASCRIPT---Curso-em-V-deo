@@ -29,43 +29,25 @@
       <div class="row ">
           <div class="col-lg col-med-auto col-sm-auto ">
             
-          <h1>Consulta de Eleitores</h1>
+          <h1>HORA AGORA!</h1>
 
-      Digite a sua idade: <input type="number" name="txt" id="txt1" />
+      <h3 id="horario"></h3>
+      <p id="hello"></p>
       <br /><br />
-      <input class="btn btn-primary"
-        type="button"
-        id="verify"
-        onclick="verificar()"
-        value="Verificar"
-      /><br /><br />
-      <p id="idade"></p>
-      <br /><br />
-      <p id="resultado"></p>
-      <br /><br />
+      
     </class=>
     </div>
     </div>
 
     <script>
-      function verificar() {
-        var valor = document.querySelector("input#txt1");
-        var age = Number(valor.value);
-        var resAge = window.document.getElementById("idade");
-        var res = window.document.getElementById("resultado");
-        resAge.innerText = `Sua idade é: ${age} `;
-
-        if (age < 16) {
-          res.style.color = "red";
-          res.innerText = "Não vota";
-        } else if (age < 18 || age > 65) {
-          res.style.color = "green";
-          res.innerText = "Voto opcional";
-        } else {
-          res.style.color = "blue";
-          res.innerText = "Voto obrigatório";
-        }
+      function horaAgora() {
+        var agora = new Date()
+        var hora = agora.getHours
+        var exibir = document.getElementById('horario')
+        exibir.innerText = `São exatamente: ${hora} horas`;
+        
       }
+
     </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
