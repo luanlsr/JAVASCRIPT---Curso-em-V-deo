@@ -5,18 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hora do dia</title>
-    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+        body{
+    background-color: rgb(110, 237, 247);
+    font: normal 15pt Arial;
+}
+header{
+    color: white;
+    text-align: center;
+
+}
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.514) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+    </style>
 </head>
 <body onload="carregar()">
     <header>
         <h1>Hora do Dia</h1>
     </header>
     <section>
-        <div >
-            <p id="msg" onclick="carregar()">Oi</p>
+        <div class="texto">
+            <p id="msg"></p>
+            <p id="msg2"></p>
         </div>
         <div id="foto">
-            <img id="img" src="/img/manhã2.png" alt="foto do dia">
+            <img id="img" src="https://i.ibb.co/b2zcx3Q/manh-2.png" alt="foto do dia">
         </div>
     </section>
     <footer>
@@ -24,14 +56,35 @@
     </footer>
     <script >
         function carregar(){
-    var msg = document.getElementById("msg")
-    var photo = document.getElementsById("foto")
-    var date = new Date()
-    var hora = date.getHours()
-    var minuto = date.getMinutes()
-    var horaMin = `${hora}:${minuto}`
-    msg.innerHTML = `Agora são ${horaMin}`
-}
+            var date = new Date()
+            var hora = date.getHours()
+            var minuto = date.getMinutes()
+            var horaMin = `${hora}:${minuto}`
+            
+            var msg = document.getElementById("msg")
+            msg.innerHTML = `Agora são ${horaMin}`
+            
+            var photo = document.getElementById("img")
+            if(hora < 12){
+                document.body.style.background = 'rgb(110, 237, 247)'
+                photo.src = 'https://i.ibb.co/b2zcx3Q/manh-2.png'
+                document.getElementById("msg2").innerText = 'BOM DIA!'
+                document.getElementById("msg2").style.textAlign = 'center'
+            
+            }else if(hora >= 12 && hora < 18){
+                document.body.style.background = '#b9846f' 
+                photo.src = 'https://i.ibb.co/phJJnYK/tarde2.png'
+                document.getElementById("msg2").innerText = 'BOA TARDE!'
+                document.getElementById("msg2").style.textAlign = 'center'
+
+            }else{
+                document.body.style.background = '#515154'
+                photo.src = 'https://i.ibb.co/HKDxQkw/noite2.png'
+                document.getElementById("msg2").innerText = 'BOA NOITE!'
+                document.getElementById("msg2").style.textAlign = 'center'
+
+            }
+        }
     </script>
 </body>
 </html>
