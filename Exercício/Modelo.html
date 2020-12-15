@@ -59,6 +59,9 @@ footer{
             var date = new Date()
             var hora = date.getHours()
             var minuto = date.getMinutes()
+            if (minuto < 10){
+                minuto = '0' + minuto
+            }
             var horaMin = `${hora}:${minuto}`
             
             var msg = document.getElementById("msg")
